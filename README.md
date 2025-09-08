@@ -9,7 +9,7 @@ For a detailed walkthrough of this implementation, check out the blog post:
 
 ## Overview
 
-This repository contains a minimal example showing how to use BAML to get structured, type-safe responses from language models. The implementation demonstrates extracting product information from unstructured text into a well-defined data structure.
+We demonstrate how to easily pull structured data out of a semi-structured document (an SEC 10-Q).
 
 ## Getting Started
 
