@@ -14,38 +14,23 @@ class Fact {
 class FilingInformation {
   company string
   description string
-  derivation Fact? @description(#"
-    If asked for multi-fact calculation, put the *final calculation* here
+  derivation int? @description(#"
+    If asked for multi-fact calculation, put the *final calculation* here in whole USD
   "#)
   facts Fact[] @description(#"
     If asked for a multi-fact calculation, put the *base facts* here
   "#)
 }
 
-class CalculatorAPI {
-  intent "basic_calculator"
-  operation "add" | "subtract" | "multiply" | "divide"
-  numbers float[]
-}
-
-function RequestCalculation(message: string) -> CalculatorAPI {
-  client Gemini
-  prompt #"
-    Given a message, extract info.
-    {{ ctx.output_format }}
-    {{ _.role("user") }} {{ message }}
-  "#
-}
-
-function SearchDoc(document: pdf, info: string) -> FilingInformation {
+function SearchDoc(document: pdf, query: string) -> FilingInformation {
   client Gemini
   prompt #"
     Extract the information from the document below.
+    Always prefer to source a fact from within a table if possible.
 
-    Info: {{info}}
+    Info: {{query}}
     Document: {{document}}
 
-    Respond in well-formatted json
     {{ ctx.output_format }}
   "#
 }
