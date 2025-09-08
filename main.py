@@ -23,19 +23,17 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
 
-  # agent loop
-  while True:
-    pdf = Pdf.from_base64(encode_file_to_base64(args.url))
-    result = b.SearchDoc(document=pdf, query=args.query)
+  pdf = Pdf.from_base64(encode_file_to_base64(args.url))
+  result = b.SearchDoc(document=pdf, query=args.query)
 
-    if len(result.facts) > 1:
-      request = b.NeedCalculator(
-        message=args.query,
-        facts=result.facts
-      )
+  if len(result.facts) > 1:
+    request = b.NeedCalculator(
+      message=args.query,
+      facts=result.facts
+    )
 
-      from sympy.parsing.mathematica import parse_mathematica
-      derivation = parse_mathematica(request.equation)
-      result.derivation = derivation.doit()
-      print(result.model_dump_json(indent=2))
-      break
+    from sympy.parsing.mathematica import parse_mathematica
+    derivation = parse_mathematica(request.equation)
+    result.derivation = derivation.doit()
+
+    print(result.model_dump_json(indent=2))
