@@ -5,7 +5,7 @@ A simple example demonstrating the BAML programming language for structured LLM 
 ## Blog Post
 
 For a detailed walkthrough of this implementation, check out the blog post:
-[BAML Tools: Structured LLM Outputs Made Simple](https://ouachitalabs.com/blog/posts/baml-tools.html)
+[Tool calls with BAML](https://ouachitalabs.com/blog/posts/baml-tools.html)
 
 ## Overview
 
