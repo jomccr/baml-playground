@@ -1,0 +1,782 @@
+/*
+Theme Name:   TB&P Admag Child
+Theme URI:    http://talkbusiness.net/tb-admag-child/
+Description:  TB&P Admag Child Theme
+Author:       Ricky Hanna
+Author URI:   http://geminimvp.com
+Template:     admag
+Version:      1.1.2
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Tags:         light,  two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain:  tb-admag-child
+*/
+
+
+.header.header,
+.no-js .sb-search .sb-icon-search.sb-icon-search {
+  background-color: #c20f28;
+  background: -moz-linear-gradient(top, #bb0c25 0%, #a10017 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #bb0c25 0%,#a10017 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #bb0c25 0%,#a10017 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bb0c25', endColorstr='#a10017',GradientType=0 ); /* IE6-9 */
+}
+
+.header-right .social-icons a .fa-facebook,
+.author-widget a .fa-facebook,
+.header-right .social-icons a .fa-twitter,
+.author-widget a .fa-twitter,
+.header-right .social-icons a .fa-linkedin,
+.author-widget a .fa-linkedin {
+  color: #fff;
+}
+
+.sb-search-divider {
+  display: none;
+}
+
+.sb-search.sb-search .sb-search-input {
+  color: #222;
+
+}
+
+::-webkit-input-placeholder {
+   color: #999;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #999;
+   opactiy: 1;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #999;
+   opactiy: 1;
+}
+:-ms-input-placeholder {
+   color: #999;
+}
+
+.archive_description {
+  margin-bottom: 50px;
+}
+
+.sb-search.sb-search.sb-search-open .sb-icon-search, .no-js .sb-search.sb-search .sb-icon-search {
+  color: #000;
+}
+
+@media (min-width: 991px) {
+  .header.header {
+    height: auto;
+  }
+
+  #content {
+    padding-top: 155px;
+  }
+
+  .menu-bg.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+  }
+
+  .logo.logo {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .logo.logo img {
+    height: 74.5px;
+    max-height: 75px;
+    width: 152px;
+  }
+
+  .sb-search {
+    bottom: 0;
+    margin: auto;
+    right: 260px;
+  }
+
+  .sb-search.sb-search-open + .sb-search-divider{
+    border: none;
+  }
+
+
+  .sb-search-divider {
+    border-left-color: #d6828e;
+    border-left-color: rgba(255, 255, 255, .5);
+    border-left-style: solid;
+    border-left-width: 1px;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 320px;
+  }
+
+  .sb-icon-search:before {
+    font-size: 26px;
+    top: 11px;
+  }
+
+  .social-icons .tooltip {
+    bottom: 10px !important;
+  }
+}
+
+.header .menu-bg {
+  background-color: #2c2c2c;
+}
+
+.header-right,
+.header-right .social-icons {
+  height: 100%;
+}
+
+.header-right {
+  right: 0;
+}
+
+.header-right .social-icons {
+  float: none;
+}
+
+.header-right .social-icons a {
+  border-left-color: #d6828e;
+  border-left-color: rgba(255, 255, 255, .5);
+  border-left-style: solid;
+  border-left-width: 1px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  min-width: 80px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+}
+
+.header-right .social-icons a:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.header-right .social-icons a i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-block.clearfix.widget_most_popular_tags a{
+  background: #4b4b4b;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #dadada;
+  border-color: #4b4b4b;
+  color: #e3e3e3;
+  display: block;
+  float: left;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+  margin: 0px 10px 10px 0px;
+  padding: 7px 9px !important;
+}
+
+.footer-block.clearfix.widget_most_popular_tags a:hover {
+  background-color: #bd142c;
+  border-color: #bd142c;
+  color: #fff;
+}
+
+.home.page .post.category-business .image-overlay,
+.home.page .post.category-business .simple-thumb {
+  background-color: #02538b;
+}
+
+.simple-post .simple-thumb,
+.widget-post .simple-thumb,
+.widget-post .author-thumb {
+  margin: 4px 0 0;
+  overflow: hidden;
+}
+
+.simple-post .simple-thumb {
+  height: 88px;
+  width: 100px;
+}
+
+.simple-post .simple-thumb img,
+.widget-post .simple-thumb img {
+  height: 100%;
+  left: 50%;
+  max-width: none;
+  position: relative;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.simple-post.has-post-thumbnail .simple-thumb + header {
+  float: right;
+  width: calc(100% - 130px);
+}
+
+.widget-post.has-post-thumbnail .simple-thumb + header {
+  float: right;
+  width: calc(100% - 80px);
+}
+
+.widget-post .simple-thumb {
+  height: 56px;
+  width: 65px;
+}
+
+.widget-post .author-thumb {
+  height: 80px;
+  width: 80px !important;
+}
+
+.widget-post .author-thumb + div {
+  float: right;
+  width: calc(100% - 110px);
+}
+
+@media screen and (max-width: 767px) {
+  .theiaStickySidebar .simple-post.has-post-thumbnail header {
+    width: calc(100% - 110px);
+  }
+
+  .widget-post .simple-thumb {
+    width: 65px !important;
+  }
+
+  .dt_sidebar .widget-post .author-thumb + div {
+    width: calc(100% - 95px);
+  }
+}
+
+ul.category-menu {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+ul.category-menu li {
+  position: relative;
+}
+
+ul.category-menu li a {
+  color: #22221e;
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 768px) {
+  ul.category-menu li {
+    display: inline-block;
+  }
+
+  ul.category-menu li + li {
+    padding-left: 15px;
+  }
+
+  ul.category-menu li + li:before {
+    color: #bd142c;
+    content: "|";
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+}
+
+.dropdown-menu .mega-menu-news .mega-menu-img { overflow: hidden; }
+
+.dropdown-menu .mega-menu-news .mega-menu-img img {
+  height: 100%;
+  left: 50%;
+  max-width: none;
+  position: relative;
+  -webkit-transform: translateX(-50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+  -ms-transform: translateX(-50%); /* IE 9 */
+  transform: translateX(-50%); /* IE 10, Fx 16+, Op 12.1+ */
+  width: auto;
+}
+
+/* for the 'Talk Business & Politics' title on the main page */
+.wpb_wrapper > .dt-block > .block-title:first-child {
+  font-size: 38px;
+}
+
+body.tag h1.block-title, body.category h1.block-title {
+  font-size: 38px;
+}
+
+
+.best-in-class section .block-title {
+  width: 50%;
+}
+
+.best-in-class section + section {
+ margin-top: 40px;
+}
+
+.best-in-class ul {
+  list-style-position: inside;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.best-in-class ul:before,
+.best-in-class ul:after {
+  content: " ";
+  display: table;
+}
+
+.best-in-class ul:after {
+  clear: both;
+}
+
+.best-in-class ul li {
+  float: left;
+  list-style: none;
+  padding: 10px 0;
+  width: 16.6%
+}
+
+.best-in-class li a {
+  color: #222;
+  font-family: "Roboto";
+  font-size: 20px;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.best-in-class a.btn {
+  background: #fff;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border: 1px solid #dadada;
+  color: #7a7a7a;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 20px auto 0;
+  padding: 11px 20px;
+}
+
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,
+.best-in-class a.btn:hover {
+  background: #7a7a7a;
+  border: 1px solid #7a7a7a;
+  color: #fff;
+}
+
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  background-color: #8c0a1c;
+}
+
+.woocommerce-info { border-top-color: #bd142c; }
+.woocommerce-info:before { color: #222; }
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt { background-color: #bd142c; }
+
+.woocommerce span.onsale {
+  background-color: #c20f28;
+  z-index: 10;
+}
+
+.woocommerce.single-product span.onsale {
+  font-size: 20px;
+  height: 75px;
+  line-height: 75px;
+  margin-left: -20px;
+  margin-top: -20px;
+  padding: 0;
+  width: 75px;
+}
+
+.woocommerce .woocommerce-message a.button { margin-top: -4px; }
+.woocommerce div.product form.cart .button,
+.woocommerce div.product form.cart div.quantity input {
+  height: 45px;
+}
+
+.woocommerce div.product form.cart div.quantity {
+  margin-top: 20px;
+}
+
+.woocommerce div.product form.cart .button {
+  background-color: #c20f28;
+  border-radius: 5px;
+}
+
+.woocommerce div.product .product_title,
+.woocommerce table.shop_table th {
+  font-family: "Roboto Slab";
+}
+
+.woocommerce ul.products li.product p.price, .woocommerce ul.products li.product span.price,
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+  color: #c20f28;
+  text-decoration: none;
+}
+
+.woocommerce ul.products li.product p.price del, .woocommerce ul.products li.product span.price del,
+.woocommerce div.product p.price del, .woocommerce div.product span.price del {
+  color: #2c2c2c;
+  display: inline;
+}
+
+.woocommerce-cart #title:before {
+  content: 'Your TB&P ';
+}
+
+.woocommerce-cart input[name="coupon_code"],
+.woocommerce-cart input[name="apply_coupon"],
+.woocommerce-cart input[name="update_cart"] {
+  height: 45px;
+}
+
+.woocommerce-cart input[name="apply_coupon"],
+.woocommerce-cart input[name="update_cart"] {
+  border-color: #c20f28;
+  border-radius: 5px;
+  color: #c20f28;
+}
+
+.featured-header h2 {
+  text-shadow: 2px 2px 2px black;
+}
+
+/* Hide regional category links */
+span.dt_cat.bgcolor5263, /* regions cat id */
+.news-block a[href*="\/category\/regions\/"],
+.featured-header a[href*="\/category\/regions\/"],
+.post-header a[href*="\/category\/regions\/"] { display: none }
+
+/* Hide latest news category links */
+span.dt_cat.bgcolor4532, /* latest news cat id */
+.news-block a[href*="\/category\/latest-news\/"],
+.featured-header a[href*="\/category\/latest-news\/"],
+.post-header a[href*="\/category\/latest-news\/"] { display: none }
+
+
+/* Ads */
+a[href*="ads.talkbusiness.net"] {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+article.post a[href*="ads.talkbusiness.net"] {
+  display: inline;
+  float: right;
+  margin-left: 1em;
+}
+
+/* hack to fix unsightly text wrapping on mobile portrait layout */
+@media(max-width: 400px) {
+  article.post a[href*="ads.talkbusiness.net"] {
+    display: block !important;
+    width: 100%;
+  }
+}
+
+article.post p {
+  text-align: justify;
+}
+
+/* Fix featured front-page stories being too small on mobile */
+@media (max-width: 991px) {
+  /* title text defines height of featured item blocks on front page -- not image */
+  .featured-header {
+    position: relative;
+  }
+
+  .featured-small.box-news.post img {
+    position: absolute;
+  }
+}
+
+/* Fix author photos on imported nwabj articles being too large */
+article.tag-nwabj .post-header .image-overlay img {
+  height: auto;
+  width: auto;
+  float: left;
+  padding: 1em;
+}
+
+
+/* Force image captions in articles to flush left */
+
+.post-content .wp-caption {
+    padding: 0;
+    text-align: left !important;
+}
+
+.post-drop-caps > p:first-child:first-letter,
+.drop-caps
+{
+  float: left;
+  color: #ff6600;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  margin: -2px 0 0;
+  font-family: "Roboto Slab";
+}
+
+// modern tribe image widget sidebar
+
+
+.widget_sp_image .widget_sp_image-description h3 {
+  text-align:center !important;
+  display:block;
+}
+
+.widget_sp_image h3.block-title {
+  text-align:left;
+}
+
+aside.widget_sp_image img, aside.widget_sp_image img.attachment-full, aside.widget_sp_image a.widget_sp_image-image-link img, aside.widget_sp_image a.widget_sp_image-image-link img.attachment-full {
+  border:1px solid #000 !important;
+  width:290px !important;
+  max-width:290px !important;
+  display:block;
+  margin:0 auto;
+}
+
+// homepage microsite area email widget
+#home-micro-email {
+  background-color: #c20f28 !important;
+}
+
+
+#home-micro-email .vc_column-inner {
+  background-color: #c20f28 !important;
+  padding:20px;
+  color:#FFF !important;
+}
+
+#home-micro-email button[type=submit] {
+  background:#000;
+  display:block;
+  color:#FFF;
+  width:100%;
+  margin-top:20px;
+  margin-bottom:0;
+}
+
+
+
+#home-micro-email h4 {
+  margin:0;
+  padding:0;
+  margin-bottom:20px;
+}
+
+
+
+
+
+
+.award-info {
+  background-color:#EFEFEF;
+  border:1px solid #CCC;
+  margin-top:2em;
+  text-align:center;
+}
+
+.award-info span {
+  display:block;
+  font-family: 'Roboto';
+}
+
+.award-image img {
+  border:1px solid #CCC;
+}
+
+.award-image {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.award-class {
+  text-transform:uppercase;
+  color:#999;
+}
+
+.award-name {
+  font-family: "Roboto Slab" !important;
+  color: #c20f28;
+  text-transform:uppercase;
+}
+
+.person-name {
+  font-size:2em;
+  margin-top:1em;
+}
+
+.person-title {
+  margin-top:1em;
+}
+
+.company-name {
+  font-style:italic;
+  padding-bottom:1em;
+}
+
+/* small */
+@media (min-width: 768px) {
+
+  .award-info {
+    text-align:left;
+  }
+
+  .award-image {
+    border-right:#CCCCCC;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding:0;
+  }
+
+  .award-image img {
+    border:none;
+    border-right:1px solid #CCC;
+  }
+
+  .award-class {
+    text-transform:uppercase;
+    color:#999;
+    padding-top:1em;
+  }
+
+  .award-name {
+    font-family: "Roboto Slab" !important;
+    color: #c20f28;
+    text-transform:uppercase;
+    font-size:1.25em;
+  }
+
+  .person-name {
+    font-size:2.2em;
+    margin-top:1.5em;
+  }
+
+  .company-name {
+    font-style:italic;
+    padding-bottom:0;
+  }
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .person-name {
+    font-size:1.5em;
+    margin-top:1em;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .person-name {
+    font-size:2.5em;
+    margin-top:1.5em;
+  }
+
+  .award-name {
+    font-family: "Roboto Slab" !important;
+    color: #c20f28;
+    text-transform:uppercase;
+    font-size:1.5em;
+  }
+
+  .award-class {
+    text-transform:uppercase;
+    color:#999;
+    padding-top:1.5em;
+  }
+}
+
+
+.news-details {
+  margin-top:0;
+}
+
+#gform_wrapper_1 #field_1_7 > label {
+  display:none;
+}
+
+#label_1_7_1 {
+  font-weight:normal;
+}
+
+.post-content a, .post-content a:hover, .post-content a:visited {
+  color:#0000FF !important;
+}
+
+.post-content a:hover {
+    border-bottom:1px solid #0000FF !important;
+}
+
+
+.gform_wrapper.gf_browser_chrome .gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox], .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+  margin-top:-3px !important;
+}
+
+.CampaignType--inline {
+  border:1px solid #CCC !important;
+  margin:30px 0 !important;
+  font-family:Roboto, 'sans-serif' !important;
+}
+
+.CampaignType--inline {
+    font-family:Roboto, 'sans-serif' !important;
+}
+
+#fb-comments {
+  min-height:260px;
+  width: 100%;
+  display:block !important;
+}
+
+
+.gemini-ad {
+  display:block;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.gemini-ad iframe {
+  display:block;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  margin-top:40px !important;
+}
+
+article.post .gemini-ad iframe {
+  display: inline !important;
+  float: right !important;
+  margin-left: 1em !important;
+}
+
+article.post ins iframe {
+  display: inline !important;
+  float: right !important;
+  margin-left: 1em !important;
+}
+
+
+.total-shares {
+	display:none !important;
+}
+
