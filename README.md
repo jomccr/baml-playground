@@ -1,6 +1,6 @@
 # BAML Test Implementation
 
-A simple example demonstrating BAML (Boundary AI Markup Language) integration for structured LLM outputs.
+A simple example demonstrating the BAML programming language for structured LLM outputs.
 
 ## Blog Post
 
