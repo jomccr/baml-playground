@@ -1,4 +1,4 @@
-client<llm> CustomGpt5Nano {
+client<llm> Gpt5Nano {
   provider openai
   options {
     model "gpt-5-nano"

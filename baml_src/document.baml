@@ -1,3 +1,8 @@
+class CalculatorRequest {
+    equation string
+
+    @@assert(contains_operation, {{ this|regex_match("[*-+/]") }} )
+}
 
 class Fact {
   value int @description(#"
@@ -20,6 +25,21 @@ class FilingInformation {
   facts Fact[] @description(#"
     If asked for a multi-fact calculation, put the *base facts* here
   "#)
+}
+
+function NeedCalculator(message: string, facts: Fact[]) -> CalculatorRequest {
+  client Gpt5Nano
+  prompt #"
+    Given a message, create an expression that best represents the user's
+    request.  If you don't have to calculate anything, return null.
+    Never give the answer or include the units. Always just raw numbers and
+    a symbolic arithmetic operation (+, -, *, /)
+
+    {{ ctx.output_format }}
+
+    {{ _.role("user") }} {{ message }}
+    {{ _.role("user") }} {{ facts }}
+  "#
 }
 
 function SearchDoc(document: pdf, query: string) -> FilingInformation {

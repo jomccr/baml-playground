@@ -16,8 +16,6 @@ def encode_file_to_base64(file_path: str) -> str:
       encoded = base64.b64encode(file.read())
       return encoded.decode('utf-8')
 
-
-
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Search a PDF document for information')
   parser.add_argument('query', help='Search query for the document')
@@ -25,12 +23,19 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
 
+  # agent loop
   while True:
-    # Create a Pdf object from URL or file path
     pdf = Pdf.from_base64(encode_file_to_base64(args.url))
-
-    # Search the document
     result = b.SearchDoc(document=pdf, query=args.query)
 
-    # Print the result
-    print(result.model_dump_json(indent=2))
+    if len(result.facts) > 1:
+      request = b.NeedCalculator(
+        message=args.query,
+        facts=result.facts
+      )
+
+      from sympy.parsing.mathematica import parse_mathematica
+      derivation = parse_mathematica(request.equation)
+      result.derivation = derivation.doit()
+      print(result.model_dump_json(indent=2))
+      break
