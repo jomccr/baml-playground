@@ -43,7 +43,7 @@ function NeedCalculator(message: string, facts: Fact[]) -> CalculatorRequest {
 }
 
 function SearchDoc(document: pdf, query: string) -> FilingInformation {
-  client Gemini
+  client "openai-responses/gpt-5"
   prompt #"
     Extract the information from the document below.
     Always prefer to source a fact from within a table if possible.
