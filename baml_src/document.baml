@@ -1,7 +1,5 @@
 class CalculatorRequest {
     equation string
-
-    @@assert(contains_operation, {{ this|regex_match("[*-+/]") }} )
 }
 
 class Fact {
@@ -28,29 +26,39 @@ class FilingInformation {
 }
 
 function NeedCalculator(message: string, facts: Fact[]) -> CalculatorRequest {
-  client Gpt5Nano
+  client Gpt5
   prompt #"
     Given a message, create an expression that best represents the user's
     request.  If you don't have to calculate anything, return null.
     Never give the answer or include the units. Always just raw numbers and
     a symbolic arithmetic operation (+, -, *, /)
 
-    {{ ctx.output_format }}
-
     {{ _.role("user") }} {{ message }}
     {{ _.role("user") }} {{ facts }}
+
+    {{ ctx.output_format }}
   "#
 }
 
-function SearchDoc(document: pdf, query: string) -> FilingInformation {
-  client Gemini
+function SearchDoc(document: pdf | string, query: string) -> FilingInformation {
+  client Gpt5
   prompt #"
+    {{ _.role("system") }}
+    You are a financial analyst that extracts structured data from SEC filings.
+
+    {{ _.role("user") }}
     Extract the information from the document below.
     Always prefer to source a fact from within a table if possible.
 
+    ----
+
     Info: {{query}}
+
+    ----
+
     Document: {{document}}
 
+    {{ _.role("user") }}
     {{ ctx.output_format }}
   "#
 }

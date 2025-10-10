@@ -1,7 +1,7 @@
-client<llm> Gpt5Nano {
-  provider openai
+client<llm> Gpt5 {
+  provider openai-responses
   options {
-    model "gpt-5-nano"
+    model "gpt-5"
     api_key env.OPENAI_API_KEY
   }
 }
