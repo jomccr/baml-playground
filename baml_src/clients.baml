@@ -2,7 +2,7 @@ client<llm> Gpt5 {
   provider openai-responses
   options {
     model "gpt-5"
-    api_key env.OPENAI_API_KEY
+    api_key env.BENCHMARK_OPENAI_API_KEY
   }
 }
 

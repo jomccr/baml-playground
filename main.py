@@ -45,7 +45,7 @@ if __name__ == '__main__':
     if args.accno:
         filing = edgar.get_by_accession_number(args.accno)
         print(filing)
-        document = filing.text()
+        document = filing.text() # type: ignore
         encoding = tiktoken.get_encoding("o200k_base")
         token_count = len(encoding.encode(document))
         print(f"Filing text loaded ({len(document)} characters, approximately {token_count} tokens)")
