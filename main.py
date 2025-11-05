@@ -24,16 +24,11 @@ if __name__ == '__main__':
   args = parser.parse_args()
 
   pdf = Pdf.from_base64(encode_file_to_base64(args.url))
-  result = b.SearchDoc(document=pdf, query=args.query)
+  result = b.Extract(document=pdf, query=args.query)
 
-  if len(result.facts) > 1:
-    request = b.NeedCalculator(
-      message=args.query,
-      facts=result.facts
-    )
-
+  if result.equation:
     from sympy.parsing.mathematica import parse_mathematica
-    derivation = parse_mathematica(request.equation)
+    derivation = parse_mathematica(result.equation)
     result.derivation = derivation.doit()
 
-    print(result.model_dump_json(indent=2))
+  print(result.model_dump_json(indent=2))

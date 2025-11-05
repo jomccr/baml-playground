@@ -1,9 +1,3 @@
-class CalculatorRequest {
-    equation string
-
-    @@assert(contains_operation, {{ this|regex_match("[*-+/]") }} )
-}
-
 class Fact {
   value int @description(#"
     If the value is in currency, round to the nearest whole dollar. For example, always expand "$12.8 millions" to 12800000 "USD"
@@ -19,6 +13,9 @@ class Fact {
 class FilingInformation {
   company string
   description string
+  equation string? @description(#"
+    If the query requires a calculation across multiple facts, provide a Mathematica-format expression using only raw numbers and arithmetic operations (+, -, *, /). Never include units or the final answer. Example: "12800000 - 8500000"
+  "#)
   derivation int? @description(#"
     If asked for multi-fact calculation, put the *final calculation* here in whole USD
   "#)
@@ -27,26 +24,17 @@ class FilingInformation {
   "#)
 }
 
-function NeedCalculator(message: string, facts: Fact[]) -> CalculatorRequest {
-  client Gpt5Nano
-  prompt #"
-    Given a message, create an expression that best represents the user's
-    request.  If you don't have to calculate anything, return null.
-    Never give the answer or include the units. Always just raw numbers and
-    a symbolic arithmetic operation (+, -, *, /)
-
-    {{ ctx.output_format }}
-
-    {{ _.role("user") }} {{ message }}
-    {{ _.role("user") }} {{ facts }}
-  "#
-}
-
-function SearchDoc(document: pdf, query: string) -> FilingInformation {
+function Extract(document: pdf, query: string) -> FilingInformation {
   client Gemini
   prompt #"
     Extract the information from the document below.
     Always prefer to source a fact from within a table if possible.
+
+    If the query requires calculating across multiple facts:
+    1. Extract all the base facts needed
+    2. Create a Mathematica-format expression using ONLY raw numbers and arithmetic operators (+, -, *, /)
+    3. Never include units or the final answer in the equation
+    4. Example equation format: "12800000 - 8500000" or "15000000 + 3200000"
 
     Info: {{query}}
     Document: {{document}}
