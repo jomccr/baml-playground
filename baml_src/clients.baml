@@ -1,5 +1,13 @@
+retry_policy OpenaiPolicy {
+  max_retries 3
+  strategy {
+    type exponential_backoff
+  }
+}
+
 client<llm> Gpt5 {
   provider openai-responses
+  retry_policy OpenaiPolicy
   options {
     model "gpt-5"
     api_key env.BENCHMARK_OPENAI_API_KEY
