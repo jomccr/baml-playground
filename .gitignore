@@ -10,3 +10,6 @@ wheels/
 .venv
 
 baml_client/
+.env
+
+logs/
